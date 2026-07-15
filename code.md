@@ -28,7 +28,7 @@ Run the following steps exactly as specified without any deviations:
 
 
 ### (Step 1)
-Turn on planning mode, then run (Step 2), (Step 3), (Step 4) and (Step 5) in parallel in order to prepare the results of (Step 6)
+Run (Step 2), (Step 3), (Step 4) and (Step 5) in parallel in order to prepare the results for (Step 6)
 
 
 ### (Step 2)
@@ -57,7 +57,7 @@ Spawn a new general purpose subagent to do the following:
 
 ### (Step 6)
 Spawn a new tech-lead subagent to do the following:
-- Review the results from (Step 2), (Step 3), (Step 4), (Step 5) and (Step 6)
+- Review the results from (Step 2), (Step 3), (Step 4), and (Step 5) 
 - Document a new, proposed test-driven development plan for the current task in ../scratch/name-of-current-task.md (with the appropriate file name for each task).
 - Ensure that we start with the appropriate end-to-end test in Stagehand for UI features (use act/extract/observe whenever possible, use the agent with Gloo AI endpoints for the OpenAI calls only when necessary for complex UI workflows)
 - Ensure that we start with the appropriate unit tests for each piece of code that implements some logic (and avoid brittle UI unit tests that would cover features being exercised by Stagehand tests)
@@ -75,73 +75,63 @@ Spawn a new general purpose subagent to:
 - Explain to user which tests were written, and what functionality needs to be implemented to make the tests turn Green (i.e., passing)
 - Obtain the user's permission to proceed to (Step 9). 
 
-### (Step 9)
-- Turn on Auto Mode
 
-### (Step 10)
+### (Step 9)
 Spawn a new tech-lead subagent
 - As approved in (Step 8), implement the code for the features in ../scratch/name-of-current-task.md (with the appropriate file name for each task)
 - Ensure that all of the tests are now Green (i.e., passing)
 
 
-### (Step 11)
+### (Step 10)
 Spawn a general purpose subagent to do the following:
 - Review the plan for the current task in ../scratch/name-of-current-task.md (with the appropriate file name for each task)
-- Review the work completed in (Step 7) and (Step 10), then commit and push all changes
-- Suggest any recommended revisions to the work completed in (Step 7) and/or (Step 10)
-- Execute (Step 12) and (Step 13) in parallel
+- Review the work completed in (Step 7) and (Step 9), then commit and push all changes
+- Suggest any recommended revisions to the work completed in (Step 7) and/or (Step 9)
+- Execute (Step 11) and (Step 12) in parallel
+
+
+### (Step 11) 
+Spawn a new general purpose subagent to do the following:
+- Review the plan for the current task in ../scratch/name-of-current-task.md (with the appropriate file name for each task)
+- Review the work completed in (Step 7) and (Step 9)
+- Review the recommended revisions from (Step 10)
+- Determine which of the recommended revisions from (Step 10) are valid
 
 
 ### (Step 12) 
 Spawn a new general purpose subagent to do the following:
 - Review the plan for the current task in ../scratch/name-of-current-task.md (with the appropriate file name for each task)
-- Review the work completed in (Step 7) and (Step 10)
-- Review the recommended revisions from (Step 11)
-- Determine which of the recommended revisions from (Step 11) are valid
+- Review the work completed in (Step 7) and (Step 9)
+- Review the recommended revisions from (Step 10)
+- Determine which of the recommended revisions from (Step 10) are necessary
 
 
-### (Step 13) 
+### (Step 13)
 Spawn a new general purpose subagent to do the following:
-- Review the plan for the current task in ../scratch/name-of-current-task.md (with the appropriate file name for each task)
-- Review the work completed in (Step 7) and (Step 10)
-- Review the recommended revisions from (Step 11)
-- Determine which of the recommended revisions from (Step 11) are necessary
+- Review the recommended revisions from (Step 10)
+- Determine if any of the recommended revisions from (Step 10) were deemed both valid in (Step 11) and necessary in (Step 12). If so, proceed to (Step 14). If not, skip ahead to (Step 17)
 
 
 ### (Step 14)
 Spawn a new general purpose subagent to do the following:
-- Review the recommended revisions from (Step 11)
-- Determine if any of the recommended revisions from (Step 11) were deemed both valid in (Step 12) and necessary in (Step 13). If so, proceed to (Step 15). If not, skip ahead to (Step 20)
+- Review the plan for the current task in ../scratch/name-of-current-task.md (with the appropriate file name for each task)
+- Review the tests and code written in (Step 7) and (Step 9), respectively
+- Review the recommended revisions which were deemed to be both valid and necessary in (Step 13)
+- Explain the changes that need to be made to the user.
+- Request the user's permission to proceed to (Step 15)
 
 
 ### (Step 15)
-Turn on Planning Mode.
+Spawn a new tech-lead agent to do the following:
+- As approved in (Step 14), implement the valid and necessary revisions to the tests and code 
+- Ensure that all tests are Green (i.e., passing).
 
 
 ### (Step 16)
 Spawn a new general purpose subagent to do the following:
-- Review the plan for the current task in ../scratch/name-of-current-task.md (with the appropriate file name for each task)
-- Review the tests and code written in (Step 7) and (Step 10), respectively
-- Review the recommended revisions which were deemed to be be both valid and necessary in (Step 14)
-- Explain the changes that need to be made to the user.
-- Request the user's permission to proceed to (Step 17)
-
-
-### (Step 17) 
-Turn on Auto Mode.
-
-
-### (Step 18)
-Spawn a new tech-lead agent to do the following:
-- As approved in (Step 16), implement the valid and necessary revisions to the tests and code 
-- Ensure that all tests are Green (i.e., passing).
-
-
-### (Step 19)
-Spawn a new general purpose subagent to do the following:
 - Commit and push all changes
 
 
-### (Step 20)
+### (Step 17)
 Spawn a new general purpose subagent to do the following:
 - If applicable, mark the current task as "Done" by adding that text to the "#" column of the corresponding task in the ../docs/plan.md file (only if applicable, ignore for pure UI changes from Claude Design).
