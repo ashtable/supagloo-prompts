@@ -135,3 +135,23 @@ Spawn a new general purpose subagent to do the following:
 ### (Step 17)
 Spawn a new general purpose subagent to do the following:
 - If applicable, mark the current task as "Done" by adding that text to the "#" column of the corresponding task in the ./docs/plan.md file (only if applicable, ignore for pure UI changes from Claude Design).
+
+### (Step 18)
+Spawn a new general purpose subagent to do the following:
+- Precondition: confirm all task work is committed and pushed (from (Step 10) and (Step 16)),
+  the working branch's CI/tests are green, and the current branch is not `main`. If any of these
+  fail, stop and report — do not merge.
+- For each repository in the "Code Locations" section that was modified during this task, open a
+  pull request from the current working branch into that repository's `main`:
+  `gh pr create --base main --head <current-branch> --title "<task summary>" --body "<summary of changes>"`
+  (reuse the existing PR for the branch if one already exists instead of failing).
+- Merge each PR into `main`: `gh pr merge <current-branch> --merge`. Merging into `main` is what
+  triggers the downstream Railway CI/CD deployment for that service.
+- If more than one repository was changed, merge in dependency order so downstream services receive
+  new migrations/types first: `supagloo-database-lib` → `supagloo-nodejs-api` /
+  `supagloo-nodejs-dbos` → `supagloo-nextjs`.
+- After merging, cut a fresh dev branch off the updated `main` in each affected repository so
+  subsequent work continues off a clean base: `git checkout main && git pull && git checkout -b <next-dev-branch> && git push -u origin <next-dev-branch>`.
+- Report each merged PR, confirm the Railway deployment was triggered for each affected service,
+  and report the new dev branch now tracking origin in each repository.
+
