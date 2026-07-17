@@ -48,7 +48,7 @@ Spawn a new general purpose subagent to do the following:
 
 
 ### (Step 3)
-Spawn a new fabulous-tech-lead subagent to do the following:
+Spawn a new tech-lead subagent to do the following:
 - Review the results from (Step 1) and (Step 2)
 - Review the user's list of new features they'd like to see designed, and determine how it relates to the existing code from (Step 1), and the latest copy of the Claude Design project (Step 2)
 - Document the new, proposed system design delta necessary to update the current system design with the requested new features specificed by the user in ./docs/design-delta.md with concise verbiage and plenty of mermaid diagrams for architecture and sequences (create directory if necessary, and delete the file if it already exists).
@@ -62,14 +62,14 @@ Spawn a new general purpose subagent to do the following:
 
 
 ### (Step 5)
-Spawn a new fabulous-tech-lead subagent to do the following:
+Spawn a new tech-lead subagent to do the following:
 - Review the results from (Step 1), (Step 2) and (Step 3)
 - Document a new, proposed test-driven-development implementation plan that consists of an ordered, numbered, table of tasks (with Stagehand e2e tests for UI, non-UI e2e tests elsewhere, and unit test everywhere) necessary to implement the proposed system design delta in ./docs/plan.md (create directory if necessary, and delete the file if it already exists).
 - Request the user to review the ./docs/plan.md and approve before proceeding to (Step 6)
 
 
 ### (Step 6)
-Spawn a new fabulous-tech-lead subagent to do the following:
+Spawn a new tech-lead subagent to do the following:
 - Review the results from (Step 1), (Step 2), (Step 3) and (Step 5)
 - Propose any recommended revisions to the ./docs/current-design.md, ./docs/design-delta.md and ./docs/plan.md documents.
 
