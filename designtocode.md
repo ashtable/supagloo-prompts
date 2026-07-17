@@ -89,10 +89,10 @@ Spawn a new tech-lead subagent to do the following:
 - Review the Current Software Engineering Task from (Step 1).
 - Review the results from (Step 2), (Step 3), (Step 4), and (Step 5) 
 - Document a detailed, test-driven development plan for the current task in ./scratch/name-of-current-task.md (with the appropriate file name for each task). Ensure that this tdd plan starts with the appropriate end-to-end tests and unit tests (for Stagehand tests use act/extract/observe whenever possible, use the agent with Gloo AI endpoints for the OpenAI calls only when necessary for complex UI workflows, and avoid brittle UI unit tests that would cover features being exercised by Stagehand tests).
-- Review and implement the integration tests and unit tests for the current task from the detailed, test-driven development plan in (Step 6) in ./scratch/name-of-current-task.md (with the appropriate file name for each task).
+- Review and implement the integration tests and unit tests for the current task in the aforementioned Code Locations using the detailed, test-driven development plan in (Step 6) in ./scratch/name-of-current-task.md (with the appropriate file name for each task).
 - Run the tests and ensure that they are all Red (i.e., failing)
 - Explain to user which tests were written, and what functionality needs to be implemented to make the tests turn Green (i.e., passing)
-- Implement the code for the current task from the test-driven development plan in (Step 6) in ./scratch/name-of-current-task.md (with the appropriate file name for each task)
+- Implement the code for the current task in the aforementioned Code Locations using the test-driven development plan in (Step 6) in ./scratch/name-of-current-task.md (with the appropriate file name for each task)
 - Ensure that all of the tests are now Green (i.e., passing)
 
 
@@ -131,7 +131,7 @@ Spawn a new general purpose subagent to do the following:
 
 ### (Step 11)
 Spawn a new tech-lead subagent to do the following:
-- Implement the recommended revisions that were deemed to be both valid and necessary in (Step 10) 
+- Implement the recommended revisions that were deemed to be both valid and necessary in (Step 10) across all the aforementioned Code Locations 
 - Ensure that all tests are Green (i.e., passing).
 
 
@@ -139,6 +139,7 @@ Spawn a new tech-lead subagent to do the following:
 Spawn a new general purpose subagent to do the following:
 - Review the code written in (Step 11) across all the aforementioned Code Locations
 - Commit and push all changes
+- In each of the aforementioned Code Locations that were impacted, run the "/release" command/skill to merge the changes into main, then bump the submodule pointer in all parent repos and fast-forward the submodule copy in each parent repo. 
 
 
 ### (Step 13)
@@ -151,4 +152,4 @@ Spawn a new general purpose subagent to do the following:
 ### (Step 14)
 Spawn a new general purpose subagent to do the following:
 - Review the Current Software Engineering Task from (Step 1).
-- Review the code written in (Step 6) and (Step 11), then provide a detailed, brief to the user of what work was completed.
+- Review the code written in (Step 6) and (Step 11), as well as the releases/submodule pointer bumps from (Step 12), and then provide a detailed briefing to the user of what work was completed.
