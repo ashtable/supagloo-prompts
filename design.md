@@ -1,14 +1,6 @@
 # Design Task Prompt
 
 ## Code Locations:
-- Supagloo Prompts: ~/code/supagloo-prompts (Git submodule in all other projects)
-- Supagloo Docker Compose: ~/code/supagloo (has all dependency projects as submodules)
-- Supagloo Prisma & Zod Types: ~/code/supagloo-database-lib (handles migrations, exports types for other projects)
-- Supagloo Next.js UI: ~/code/supagloo-nextjs
-- Supagloo Node.js API: ~/code/supagloo-nodejs-api
-- Supagloo Node.js DBOS Workflows: ~/code/supagloo-nodejs-dbos
-
-## Code Locations:
 
 ### Prompts for Local Development
 - Supagloo Prompts: ~/code/supagloo-prompts (should be a Git submodule in all other projects)
