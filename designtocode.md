@@ -103,7 +103,7 @@ Spawn a general purpose subagent to do the following:
 
 
 ### (Step 7) 
-Spawn a new tech-lead subagent to do the following:
+Spawn a new general purpose subagent to do the following:
 - Review the detailed, test-driven development plan from (Step 6) for the current task in ./scratch/name-of-current-task.md (with the appropriate file name for each task).
 - Perform a code review of the work completed in (Step 6) across all the aforementioned Code Locations against the detailed, test-driven development plan.
 - Suggest any recommended revisions to the work completed in (Step 6) 
