@@ -135,11 +135,11 @@ Spawn a new tech-lead subagent to do the following:
 Spawn a new general purpose subagent to do the following:
 - Review the code written in (Step 11) across all the aforementioned Code Locations
 - Commit and push all changes
-- In each of the aforementioned Code Locations that were impacted, run the "/release" command/skill to merge the changes into main, then bump the submodule pointer in all parent repos and fast-forward the submodule copy in each parent repo. 
 
 
 ### (Step 13)
 Spawn a new general purpose subagent to do the following:
+- In each of the aforementioned Code Locations that were impacted, run the "/release" command/skill to merge the changes into main, then bump the submodule pointer in all parent repos and fast-forward the submodule copy in each parent repo. 
 - Review the Current Software Engineering Task from (Step 1).
 - Mark the current task as "Done" by adding the text " (Done!)" to the "#" column of the "Task table" in the ./docs/plan.md file 
 - Commit and push the change to ./docs/plan.md
